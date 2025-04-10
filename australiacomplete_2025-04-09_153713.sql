@@ -15,9 +15,6 @@
 /*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
---
--- Table structure for table `datos_climaticos`
---
 
 DROP TABLE IF EXISTS `datos_climaticos`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
@@ -33,17 +30,11 @@ CREATE TABLE `datos_climaticos` (
 ) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
---
--- Dumping data for table `datos_climaticos`
---
 
 /*!40000 ALTER TABLE `datos_climaticos` DISABLE KEYS */;
 INSERT INTO `datos_climaticos` VALUES (1,1,2020,43.00),(2,2,2020,40.75),(3,3,2020,39.20);
 /*!40000 ALTER TABLE `datos_climaticos` ENABLE KEYS */;
 
---
--- Table structure for table `expectativavida`
---
 
 DROP TABLE IF EXISTS `expectativavida`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
@@ -61,17 +52,11 @@ CREATE TABLE `expectativavida` (
 ) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
---
--- Dumping data for table `expectativavida`
---
 
 /*!40000 ALTER TABLE `expectativavida` DISABLE KEYS */;
 INSERT INTO `expectativavida` VALUES (1,1,2020,82.50,80.00,85.00),(2,2,2020,81.00,79.00,83.00),(3,3,2020,80.50,78.50,82.50);
 /*!40000 ALTER TABLE `expectativavida` ENABLE KEYS */;
 
---
--- Table structure for table `ingresos`
---
 
 DROP TABLE IF EXISTS `ingresos`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
@@ -87,17 +72,11 @@ CREATE TABLE `ingresos` (
 ) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
---
--- Dumping data for table `ingresos`
---
 
 /*!40000 ALTER TABLE `ingresos` DISABLE KEYS */;
 INSERT INTO `ingresos` VALUES (1,1,2020,750000000.00),(2,2,2020,650000000.00),(3,3,2020,500000000.00);
 /*!40000 ALTER TABLE `ingresos` ENABLE KEYS */;
 
---
--- Table structure for table `lugares`
---
 
 DROP TABLE IF EXISTS `lugares`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
@@ -109,17 +88,10 @@ CREATE TABLE `lugares` (
 ) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
---
--- Dumping data for table `lugares`
---
-
 /*!40000 ALTER TABLE `lugares` DISABLE KEYS */;
 INSERT INTO `lugares` VALUES (1,'Sydney'),(2,'Melbourne'),(3,'Brisbane');
 /*!40000 ALTER TABLE `lugares` ENABLE KEYS */;
 
---
--- Table structure for table `poblacion`
---
 
 DROP TABLE IF EXISTS `poblacion`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
@@ -137,17 +109,10 @@ CREATE TABLE `poblacion` (
 ) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
---
--- Dumping data for table `poblacion`
---
 
 /*!40000 ALTER TABLE `poblacion` DISABLE KEYS */;
 INSERT INTO `poblacion` VALUES (1,1,2020,5000000,2400000,2600000),(2,2,2020,4000000,1900000,2100000);
 /*!40000 ALTER TABLE `poblacion` ENABLE KEYS */;
-
---
--- Temporary view structure for view `v_expectativavidacompleta`
---
 
 DROP TABLE IF EXISTS `v_expectativavidacompleta`;
 /*!50001 DROP VIEW IF EXISTS `v_expectativavidacompleta`*/;
@@ -161,9 +126,6 @@ SET @saved_cs_client     = @@character_set_client;
  1 AS `Esperanza_Vida_Mujeres`*/;
 SET character_set_client = @saved_cs_client;
 
---
--- Temporary view structure for view `v_nombresciudades`
---
 
 DROP TABLE IF EXISTS `v_nombresciudades`;
 /*!50001 DROP VIEW IF EXISTS `v_nombresciudades`*/;
@@ -173,9 +135,6 @@ SET @saved_cs_client     = @@character_set_client;
  1 AS `Ciudad`*/;
 SET character_set_client = @saved_cs_client;
 
---
--- Temporary view structure for view `v_poblacionporciudad`
---
 
 DROP TABLE IF EXISTS `v_poblacionporciudad`;
 /*!50001 DROP VIEW IF EXISTS `v_poblacionporciudad`*/;
@@ -187,11 +146,7 @@ SET @saved_cs_client     = @@character_set_client;
  1 AS `Poblacion_Total`,
  1 AS `Poblacion_Hombres`,
  1 AS `Poblacion_Mujeres`*/;
-SET character_set_client = @saved_cs_client;
-
---
--- Temporary view structure for view `v_resumeningresos`
---
+SET character_set_client = @saved_cs_client
 
 DROP TABLE IF EXISTS `v_resumeningresos`;
 /*!50001 DROP VIEW IF EXISTS `v_resumeningresos`*/;
@@ -203,9 +158,6 @@ SET @saved_cs_client     = @@character_set_client;
  1 AS `Ingreso_Total`*/;
 SET character_set_client = @saved_cs_client;
 
---
--- Dumping routines for database 'australiacomplete'
---
 /*!50003 DROP PROCEDURE IF EXISTS `FiltrarCiudad` */;
 /*!50003 SET @saved_cs_client      = @@character_set_client */ ;
 /*!50003 SET @saved_cs_results     = @@character_set_results */ ;
@@ -217,38 +169,56 @@ SET character_set_client = @saved_cs_client;
 /*!50003 SET sql_mode              = 'IGNORE_SPACE,NO_ZERO_IN_DATE,NO_ZERO_DATE,NO_ENGINE_SUBSTITUTION' */ ;
 DELIMITER ;;
 CREATE DEFINER=`root`@`localhost` PROCEDURE `FiltrarCiudad`(IN nomCiudad VARCHAR(100))
-BEGIN
-    SELECT 
-        l.Id_Ciudad,
-        l.Ciudad,
-        p.Año AS Año_Poblacion,
-        p.Poblacion_Total,
-        p.Poblacion_Hombres,
-        p.Poblacion_Mujeres,
-        e.Año AS Año_Expectativa,
-        e.Esperanza_Vida_General,
-        e.Esperanza_Vida_Hombres,
-        e.Esperanza_Vida_Mujeres,
-        c.Año AS Año_Clima,
-        c.Temperatura_Maxima,
-        i.Año AS Año_Ingresos,
-        i.Ingreso_Total
-    FROM Lugares l
-    LEFT JOIN Poblacion p ON l.Id_Ciudad = p.Id_Ciudad
-    LEFT JOIN ExpectativaVida e ON l.Id_Ciudad = e.Id_Ciudad
-    LEFT JOIN Datos_Climaticos c ON l.Id_Ciudad = c.Id_Ciudad
-    LEFT JOIN Ingresos i ON l.Id_Ciudad = i.Id_Ciudad
-    WHERE l.Ciudad = nomCiudad;
+BEGIN
+
+    SELECT 
+
+        l.Id_Ciudad,
+
+        l.Ciudad,
+
+        p.Año AS Año_Poblacion,
+
+        p.Poblacion_Total,
+
+        p.Poblacion_Hombres,
+
+        p.Poblacion_Mujeres,
+
+        e.Año AS Año_Expectativa,
+
+        e.Esperanza_Vida_General,
+
+        e.Esperanza_Vida_Hombres,
+
+        e.Esperanza_Vida_Mujeres,
+
+        c.Año AS Año_Clima,
+
+        c.Temperatura_Maxima,
+
+        i.Año AS Año_Ingresos,
+
+        i.Ingreso_Total
+
+    FROM Lugares l
+
+    LEFT JOIN Poblacion p ON l.Id_Ciudad = p.Id_Ciudad
+
+    LEFT JOIN ExpectativaVida e ON l.Id_Ciudad = e.Id_Ciudad
+
+    LEFT JOIN Datos_Climaticos c ON l.Id_Ciudad = c.Id_Ciudad
+
+    LEFT JOIN Ingresos i ON l.Id_Ciudad = i.Id_Ciudad
+
+    WHERE l.Ciudad = nomCiudad;
+
 END ;;
 DELIMITER ;
 /*!50003 SET sql_mode              = @saved_sql_mode */ ;
 /*!50003 SET character_set_client  = @saved_cs_client */ ;
 /*!50003 SET character_set_results = @saved_cs_results */ ;
 /*!50003 SET collation_connection  = @saved_col_connection */ ;
-
---
--- Final view structure for view `v_expectativavidacompleta`
---
 
 /*!50001 DROP VIEW IF EXISTS `v_expectativavidacompleta`*/;
 /*!50001 SET @saved_cs_client          = @@character_set_client */;
@@ -282,9 +252,6 @@ DELIMITER ;
 /*!50001 SET character_set_results     = @saved_cs_results */;
 /*!50001 SET collation_connection      = @saved_col_connection */;
 
---
--- Final view structure for view `v_poblacionporciudad`
---
 
 /*!50001 DROP VIEW IF EXISTS `v_poblacionporciudad`*/;
 /*!50001 SET @saved_cs_client          = @@character_set_client */;
@@ -299,10 +266,6 @@ DELIMITER ;
 /*!50001 SET character_set_client      = @saved_cs_client */;
 /*!50001 SET character_set_results     = @saved_cs_results */;
 /*!50001 SET collation_connection      = @saved_col_connection */;
-
---
--- Final view structure for view `v_resumeningresos`
---
 
 /*!50001 DROP VIEW IF EXISTS `v_resumeningresos`*/;
 /*!50001 SET @saved_cs_client          = @@character_set_client */;
