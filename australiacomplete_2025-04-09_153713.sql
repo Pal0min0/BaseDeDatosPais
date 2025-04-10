@@ -146,7 +146,7 @@ SET @saved_cs_client     = @@character_set_client;
  1 AS `Poblacion_Total`,
  1 AS `Poblacion_Hombres`,
  1 AS `Poblacion_Mujeres`*/;
-SET character_set_client = @saved_cs_client
+SET character_set_client = @saved_cs_client;
 
 DROP TABLE IF EXISTS `v_resumeningresos`;
 /*!50001 DROP VIEW IF EXISTS `v_resumeningresos`*/;
